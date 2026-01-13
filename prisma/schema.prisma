@@ -39,7 +39,7 @@ model Account {
   provider String
   providerAccountId String
   refreshToken String? @map("refresh_token")
-  accessToen String? @map("access_token")
+  accessToken String? @map("access_token")
   expiresAt Int? @map("expires_at")
   tokenType String? @map("token_type") 
   scope String?
