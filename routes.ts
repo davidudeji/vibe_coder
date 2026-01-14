@@ -4,16 +4,6 @@
 export const publicRoutes: string[] = [
 
 ]
-
-/**
- An array of routes that are protected. These routes requires authentication
- @type {string[]}
- */
-
- export const publicRoutes: string[] = [
-    
- ]
-
  /**
   An array of routes that accessible to the public
   @type {string[]}

@@ -1,4 +1,4 @@
-"use Server"
+
 
 import {auth} from "@/auth"
 
@@ -35,5 +35,5 @@ export const getAccountByUserId = async(userId:string) =>{
 
 export const currentUser = async()=>{
     const user = await auth()
-    return  user?.user;
+    return  user?.user
 }

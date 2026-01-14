@@ -20,16 +20,15 @@ export default auth((req)=>{
     const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
 
     const isAuthRoute = authRoutes.includes(nextUrl.pathname);
-
     if(isApiAuthRoute){
         return null
     }
-        if(isAuthRoute){
-            if(isLoggedIn){
-                return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT, nextUrl))
-            }
-            return null
-        }
+
+    if(isAuthRoute){
+        // Allow both signed-in and unsigned users to access auth routes.
+        // This enables re-authentication, account linking, and sign-in flows.
+        return null
+    }
         if(!isLoggedIn && !isPublicRoute){
             return Response.redirect(new URL("/auth/sign-in", nextUrl))
         }
@@ -38,5 +37,7 @@ export default auth((req)=>{
 
 export const config = {
     // copied from clerk
-    matcher:["/((?!.+\\.[\\w]+$|_next).*)", "/", "*/(api|trpc)(.*)"],
+    matcher: [
+    '/((?!.*\\..*|_next).*)', '/','/(api|trpc)(.*)',
+  ],
 }

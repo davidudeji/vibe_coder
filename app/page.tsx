@@ -1,9 +1,12 @@
-
+import SignOutNav from "./components/signout-nav-client";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <div><h1>Page</h1></div>
-    </div>
+    <>
+      <SignOutNav />
+      <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+        <div className="p-6 bg-white rounded shadow"><h1 className="text-xl">Welcome</h1></div>
+      </div>
+    </>
   );
 }
