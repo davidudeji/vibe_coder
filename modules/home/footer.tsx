@@ -4,12 +4,12 @@ import { Github, Linkedin, X, Instagram } from "lucide-react";
 export function Footer() {
   const socialLinks = [
     {
-      href: "https://github.com/",
+      href: "https://github.com/davidudeji",
       label: "GitHub",
       icon: <Github className="w-5 h-5" />,
     },
     {
-      href: "https://www.linkedin.com/",
+      href: "https://www.linkedin.com/davidcudeji",
       label: "LinkedIn",
       icon: <Linkedin className="w-5 h-5" />,
     },

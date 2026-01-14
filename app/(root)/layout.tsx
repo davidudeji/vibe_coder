@@ -1,6 +1,6 @@
 import Header from "@/modules/home/header"
 import { Metadata } from "next"
-import Footer  from "@/modules/home/footer"
+import {Footer}  from "@/modules/home/footer"
 import { cn } from "@/lib/utils"
 export const metadata: Metadata = {
     title: {
