@@ -6,6 +6,7 @@ import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import { ThemeProvider } from "@/components/providers/theme-providers";
 
+
 export const metadata: Metadata = {
   title: {
     template: "VibeCode -  Editor",
@@ -43,6 +44,7 @@ export default async function RootLayout({
             <main className="z-20 relative w-full min-h-screen">
               {children}
             </main>
+            
           </ThemeProvider>
         </body>
       </html>

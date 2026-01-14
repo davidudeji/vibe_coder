@@ -1,16 +1,20 @@
-import UserButton from "@/modules/auth/components/user-button";
+
+import { Header } from "@/modules/home/header";
+import { Footer } from "@/modules/home/footer";
+import HomePage from "@/app/(root)/page";
 
 
 export default function Home() {
   return (
-    <>
+    <div>
        
-        <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-        <div className="p-6 bg-white rounded shadow"><h1 className="text-xl">Welcome</h1></div>
+
+          <Header/>
+          <HomePage/>
         
-        <UserButton/>
-        </div>
+          <Footer/>
+        
        
-    </>
+    </div>
   );
 }

@@ -10,9 +10,13 @@ export const {
   signOut,
   auth,
 } = NextAuth({
+  ...authConfig,
   adapter: PrismaAdapter(db),
   secret: process.env.AUTH_SECRET,
-
+  pages: {
+    signIn: "/auth/sign-in",
+    error: "/auth/sign-in",
+  },
   callbacks: {
     async signIn({ user, account }) {
       if (!user || !account) return false;
@@ -85,6 +89,4 @@ export const {
       return session;
     },
   },
-
-  ...authConfig,
 });
