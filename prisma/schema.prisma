@@ -29,7 +29,7 @@ model User{
   role UserRole @default(USER)
 
   myPlayground Playground[]
-  // staredPlayground playground[] @relation("staredPlayground")
+  staredPlayground StarMark[]
 
   createAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -69,17 +69,19 @@ model Playground {
   template Templates @default(REACT)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  // starmark StarMark[]
+
+  Starmark StarMark[]
+
   userId String
   user  User  @relation(fields: [title], references: [id])
 
   // todo templateFiles
 }
 
-/* model StarMark {
-  id String @id @default(cuid()) @map("_id)
+ model StarMark {
+  id String @id @default(cuid()) @map("_id")
   userId String
-  PlaygroundId String
+  playgroundId String
   isMarked Boolean
   createdAt DateTime @default(now())
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
@@ -87,4 +89,3 @@ model Playground {
 
   @@unique([userId, playgroundId])
 } 
-*/
